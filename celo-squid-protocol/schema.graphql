@@ -1,0 +1,45 @@
+type AddressStat @entity {
+  id: ID!
+  user_address: String!
+  symbol: String!
+  sourceChain: String!
+  destinationChain: String!
+  volume: BigInt!
+}
+
+type AddressStatByDate @entity {
+  id: ID!
+  date: String!
+  user_address: String!
+  symbol: String!
+  sourceChain: String!
+  destinationChain: String!
+  volume: BigInt!
+}
+
+
+type TokenStat @entity {
+  id: ID!
+  symbol: String!
+  sourceChain: String!
+  destinationChain: String!
+  volume: BigInt!
+}
+
+type TokenStatByDate @entity {
+  id: ID!
+  date: String!
+  symbol: String!
+  sourceChain: String!
+  destinationChain: String!
+  volume: BigInt!
+}
+
+type TokenStatByMonth @entity {
+  id: ID!
+  date: String!
+  symbol: String!
+  sourceChain: String!
+  destinationChain: String!
+  volume: BigInt!
+}
