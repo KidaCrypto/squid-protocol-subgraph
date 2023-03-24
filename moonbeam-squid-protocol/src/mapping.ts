@@ -71,6 +71,9 @@ export function handleNativeGasPaidForContractCallWithToken(event: NativeGasPaid
     addressStatByDate.volume = new BigInt(0);
   }
 
+  addressStatByDate.volume = addressStatByDate.volume.plus(event.params.amount);
+  addressStatByDate.save();
+
   let dateId = dateStr + "_" + event.params.destinationChain + "_" + event.params.symbol;
   let tokenStatsByDate = TokenStatByDate.load(dateId);
   if(!tokenStatsByDate) {
